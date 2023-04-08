@@ -40,25 +40,13 @@ class WindowWithLabel(Tk):
 
         x0, y0 = to_user_coordinates(0, 0)
         x1, y1 = to_user_coordinates(1, 0)
-
+        # Тут надо что то изменить чтобы он не закрышивал линии при перемещении поинтера вот
         self.context.move_to(*to_user_coordinates(-1, 0))
         self.context.line_to(*to_user_coordinates(1, 0))
         self.context.move_to(*to_user_coordinates(0, -1))
         self.context.line_to(*to_user_coordinates(0, 1))
 
-        # Draw arrows
-        # self.context.line_to(x1 - 10, y1 + 5)
-        # self.context.move_to(x1, y1)
-        # self.context.line_to(x1 - 10, y1 - 5)
-        # self.context.move_to(x0, y0)
-        # self.context.line_to(x0 + 5, y0 + 10)
-        # self.context.move_to(x0, y0)
-        # self.context.line_to(x0 - 5, y0 + 10)
 
-        # self.context.stroke()
-
-        # Draw unit circle
-        # self.context.set_line_width(5)
         self.context.set_source_rgb(0, 0, 1)
         x, y = to_user_coordinates(1, 0)
         self.context.arc(WIDTH / 2.0, HEIGHT / 2.0, WIDTH / 4.0, 0, 2 * math.pi)
