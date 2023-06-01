@@ -31,8 +31,9 @@ class WindowWithLabel(Tk):
         self.context.fill()
 
         # Рисуем круг ед. окружности
+        radius = WIDTH / 4.0
         self.context.set_source_rgb(0, 0, 1)
-        self.context.arc(WIDTH / 2.0, HEIGHT / 2.0, WIDTH / 4.0, 0, 2 * math.pi)
+        self.context.arc(WIDTH / 2.0, HEIGHT / 2.0, radius, 0, 2 * math.pi)
         self.context.stroke()
 
         # Рисуем оси
@@ -67,14 +68,14 @@ class WindowWithLabel(Tk):
 
         fi = math.atan(y_now / x_now)
         n = int(PARAMETER_1)
-        z_module = math.sqrt(x_now ** 2 + y_now ** 2)
+        z_module = math.sqrt(x_now ** 2 + y_now ** 2) / radius
 
         for k in range(n):
             complex_root = (z_module ** (1 / n) * math.cos((fi + 2 * math.pi * k) / n),
                             z_module ** (1 / n) * math.sin((fi + 2 * math.pi * k) / n))
             print(complex_root)
 
-            self.context.arc((complex_root[0] + x0), (complex_root[1] + y0), 4, 0, 2 * math.pi)
+            self.context.arc((complex_root[0] * radius + x0), (complex_root[1] * radius + y0), 4, 0, 2 * math.pi)
             self.context.fill()
 
         # Далее нарисованное помещается в объект Label на окне
