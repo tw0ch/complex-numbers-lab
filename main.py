@@ -65,18 +65,13 @@ class WindowWithLabel(Tk):
         # print(f"window {self.mouse_x, self.mouse_y}")
         print(f"axes: {x_now} / {y_now}")
 
-        x_now *= 40000
-        y_now *= 40000
-        print(f"updated axes: {x_now} / {y_now}")
-
-
         fi = math.atan(y_now / x_now)
         n = int(PARAMETER_1)
         z_module = math.sqrt(x_now ** 2 + y_now ** 2)
 
         for k in range(n):
-            complex_root = (z_module ** (1 / n) * math.cos((fi + 2 * math.pi * k) / n),
-                            z_module ** (1 / n) * math.sin((fi + 2 * math.pi * k) / n))
+            complex_root = (z_module ** (1 / n) * math.cos((fi + 2 * math.pi * k) / n) * 34,
+                            z_module ** (1 / n) * math.sin((fi + 2 * math.pi * k) / n) * 34)
             print(complex_root)
 
             self.context.arc((complex_root[0] + x0), (complex_root[1] + y0), 4, 0, 2 * math.pi)
@@ -120,7 +115,7 @@ class WindowWithLabel(Tk):
 #     print("Передайте хотя бы один параметр через командную строку. Например, \npython3 lab.py 8")
 #     sys.exit()
 
-PARAMETER_1 = 3
+PARAMETER_1 = 4
 
 if __name__ == "__main__":
     WindowWithLabel()
