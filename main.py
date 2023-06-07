@@ -56,7 +56,7 @@ class WindowWithLabel(Tk):
         # Считаем комплексное число и Закрашиваем круги соответсвующие корням
         self.context.set_source_rgb(255, 0, 0)
 
-        x_now, y_now = self.mouse_x - x0, y0 - self.mouse_y
+        x_now, y_now = self.mouse_x - x0, self.mouse_y - y0
 
         if x_now == 0:
             x_now = x_now + 1
