@@ -9,15 +9,8 @@ import numpy as np
 # Установите зависимости! Команда:
 # pip3 install pillow pycairo tk
 
-# Запустить с параметром 1:
-# python3 lab.py 1
-
-def zhukovsky_chaplygin(a, t):
-    # Convert polar coordinates to Cartesian coordinates
-    x = a * (2 * math.cos(t) - math.cos(2 * t))
-    y = a * (2 * math.sin(t) + math.sin(2 * t))
-    return x, y
-
+# Запустить с параметром 1000 (кл-во точек отображения):
+# python3 main.py 1000
 
 class WindowWithLabel(Tk):
     """Класс для окна"""
@@ -60,7 +53,6 @@ class WindowWithLabel(Tk):
         radius_mouse_circle = radius_unit_circle / 10
         self.context.set_source_rgba(0, 0, 1, 0.5)
         self.context.arc(self.mouse_x, self.mouse_y, radius_mouse_circle, 0, 2 * math.pi)
-        # self.context.arc(self.mouse_x * 1.1, self.mouse_y * 1.1, 5, 0, 2 * math.pi)
         self.context.fill()
 
         # Считаем комплексное число и Закрашиваем круги соответсвующие корням
@@ -73,28 +65,23 @@ class WindowWithLabel(Tk):
         if y_now == 0:
             y_now = y_now + 1
 
-        num_points = 1000  # Number of points on the airfoil
+        num_points = int(PARAMETER_1)  # Number of points on the airfoil
 
-        lam = 10  # transform parameter
-        scale = 4  # scale parameter
-        x0, y0 = x_now / radius_mouse_circle, y_now / radius_mouse_circle
-        R = radius_mouse_circle  # circle radius
-        print(x0, y0, radius_mouse_circle)
-        # x0, y0 = -0.15, 0.1  # center of circle in z plane
-        # R = 1.15
+        lam = 1  # параметр трансформации
+        scale = 50  # параметр увеличения
+        x0, y0 = x_now / radius_unit_circle, y_now / radius_unit_circle
+        R = radius_mouse_circle / 10  # радиус круга под мышкой
+        print(f'x: {x0}, y: {y0}, r: {R}')
 
-        # нужно уменьшить размерность осей
-        # нужно уменьшить размерность осей
-
-        # curve in z plane
+        # вычислеие кривой для z плоскости
         n = num_points
 
         x = np.linspace(-R + x0, R + x0, n)
-        yu = np.sqrt(R ** 2 - (x - x0) ** 2) + y0  # upper semi-circle
-        yl = -np.sqrt(R ** 2 - (x - x0) ** 2) + y0  # lower semi-circle
+        yu = np.sqrt(R ** 2 - (x - x0) ** 2) + y0  # верхний полу-круг
+        yl = -np.sqrt(R ** 2 - (x - x0) ** 2) + y0  # нижний полу-круг
 
-        zu = (x + 1j * yu)  # upper curve
-        zl = (x + 1j * yl)  # lower curve
+        zu = (x + 1j * yu)  # верхняя кривая
+        zl = (x + 1j * yl)  # нижняя кривая
 
         # zeta plane curve
         zeta_u = (zu + lam ** 2 / zu) * scale
@@ -141,12 +128,12 @@ class WindowWithLabel(Tk):
         self.redraw()
 
 
-# ## ДОБАВЬТЕ ДОПОЛНИТЕЛЬНЫЕ ПРОВЕРКИ ДЛЯ ПЕРЕДАННОГО ПАРАМЕТРА ЗДЕСЬ
-# if len(sys.argv) < 2:
-#     print("Передайте хотя бы один параметр через командную строку. Например, \npython3 lab.py 8")
-#     sys.exit()
+# ДОБАВЬТЕ ДОПОЛНИТЕЛЬНЫЕ ПРОВЕРКИ ДЛЯ ПЕРЕДАННОГО ПАРАМЕТРА ЗДЕСЬ
+if len(sys.argv) < 2:
+    print("Передайте хотя бы один параметр через командную строку. Например, \npython3 lab.py 8")
+    sys.exit()
 
-PARAMETER_1 = 1000
+PARAMETER_1 = sys.argv[1]
 
 if __name__ == "__main__":
     WindowWithLabel()

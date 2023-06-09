@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09700b16-ae2a-4778-bc87-1f34b1043777" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/second.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -56,7 +54,9 @@
       <workItem from="1685085928452" duration="3000" />
       <workItem from="1685622869087" duration="12873000" />
       <workItem from="1686147957614" duration="9274000" />
-      <workItem from="1686166229688" duration="11088000" />
+      <workItem from="1686166229688" duration="16243000" />
+      <workItem from="1686296807611" duration="883000" />
+      <workItem from="1686316381743" duration="49000" />
     </task>
     <servers />
   </component>
@@ -66,7 +66,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/laba$Image.coverage" NAME="Image Coverage Results" MODIFIED="1685623437358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/PIL" />
     <SUITE FILE_PATH="coverage/laba$third.coverage" NAME="third Coverage Results" MODIFIED="1686174682460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/laba$main.coverage" NAME="main Coverage Results" MODIFIED="1686177219056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/laba$main.coverage" NAME="main Coverage Results" MODIFIED="1686208570388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/laba$second.coverage" NAME="second Coverage Results" MODIFIED="1686168377820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
