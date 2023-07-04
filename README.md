@@ -14,10 +14,10 @@
 
 ```
 cd iteration-1
-python main.py 5
+python3 main.py 5
 ```
 Итерация 2:
 ```
 cd iteration-2
-python main.py 1000
+python3 main.py 1000
 ```
